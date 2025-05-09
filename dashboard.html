@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Shoaib">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3 class="gradient-text">Student Portal</h3>
+            </div>
+            <div class="sidebar-profile">
+                <div class="profile-avatar" id="profile-avatar-sidebar">SG</div>
+                <h4 id="profile-name-sidebar">Shoaib Ghazi</h4>
+                <p id="profile-detail-sidebar">itsshoaibghazi@gmail.com</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" data-section="personal-info" class="active"><i class="fas fa-user-circle nav-icon"></i>Personal Info</a></li>
+                    <li><a href="#" data-section="result"><i class="fas fa-poll nav-icon"></i>Result</a></li>
+                    <li><a href="#" data-section="notes"><i class="fas fa-sticky-note nav-icon"></i>Notes</a></li>
+                    <li><a href="#" data-section="attendance"><i class="fas fa-calendar-check nav-icon"></i>Attendance</a></li>
+                </ul>
+            </nav>
+            <button id="logout-button" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                 <h1 id="main-content-title" class="gradient-text">Personal Information</h1>
+                 <p id="main-content-subtitle">Your personal details.</p>
+            </header>
+            
+            <section id="personal-info-section" class="content-section active">
+                 <div class="personal-info-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar-large" id="profile-avatar-main">SG</div>
+                        <div class="profile-info-main">
+                            <h3 id="info-name-large">Shoaib Ghazi</h3>
+                            <p id="info-program-year">Software Engineering - Year 4</p>
+                        </div>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Student ID:</span>
+                            <span class="info-value" id="info-roll">60926</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value" id="info-email">itsshaoibghazi@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Program:</span>
+                            <span class="info-value" id="info-program">Software Engineering</span>
+                        </div>
+                         <div class="info-item">
+                            <span class="info-label">Year:</span>
+                            <span class="info-value" id="info-year">4</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="result-section" class="content-section">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Midterm</th>
+                                <th>Final Term</th>
+                            </tr>
+                        </thead>
+                        <tbody id="result-table-body">
+                            <tr>
+                                <td>Software Requirement Engineering (SRE)</td>
+                                <td data-subject="SRE" data-term="midterm">-</td>
+                                <td data-subject="SRE" data-term="finalterm">-</td>
+                            </tr>
+                            <tr>
+                                <td>Database</td>
+                                <td data-subject="Database" data-term="midterm">-</td>
+                                <td data-subject="Database" data-term="finalterm">-</td>
+                            </tr>
+                            <tr>
+                                <td>Operating System</td>
+                                <td data-subject="OS" data-term="midterm">-</td>
+                                <td data-subject="OS" data-term="finalterm">-</td>
+                            </tr>
+                            <tr>
+                                <td>Analysis of Algorithm</td>
+                                <td data-subject="AoA" data-term="midterm">-</td>
+                                <td data-subject="AoA" data-term="finalterm">-</td>
+                            </tr>
+                            <tr>
+                                <td>Statistics</td>
+                                <td data-subject="Stats" data-term="midterm">-</td>
+                                <td data-subject="Stats" data-term="finalterm">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="notes-section" class="content-section">
+                <p class="coming-soon-text">Coming Soon...</p>
+            </section>
+
+            <section id="attendance-section" class="content-section">
+                 <p class="coming-soon-text">Attendance data will be displayed here.</p>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
+  

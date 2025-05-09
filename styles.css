@@ -1,0 +1,491 @@
+
+:root {
+    --primary-color: #7c3aed; 
+    --primary-color-dark: #6d28d9;
+    --secondary-color: #f3e8ff; 
+    --accent-color: #ec4899; 
+    --accent-color-dark: #db2777;
+    --background-color-page: #f5f3ff; 
+    --background-color-main: #ffffff;
+    --text-color: #374151; 
+    --text-color-light: #6b7280;
+    --text-color-subtle: #9ca3af;
+    --card-background: #ffffff;
+    --border-color: #e5e7eb; 
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #4b5563;
+    --sidebar-active-bg: #ede9fe;
+    --sidebar-active-text: var(--primary-color);
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --box-shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --gradient-start: var(--primary-color);
+    --gradient-end: #a78bfa;
+    --input-bg: #f9fafb;
+    --input-border: #d1d5db;
+    --input-focus-border: var(--primary-color);
+    --button-text-color: #ffffff;
+    --logout-button-bg: #fee2e2;
+    --logout-button-text: #ef4444;
+    --logout-button-hover-bg: #fecaca;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: var(--background-color-page);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient Text Utility */
+.gradient-text {
+    background: linear-gradient(60deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Login Page Styles */
+.login-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container { /* This can be removed if login-page-wrapper handles centering */
+   /* kept for potential future use if wrapper changes */
+}
+
+.login-box {
+    background-color: var(--card-background);
+    padding: 48px;
+    border-radius: 24px; 
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.login-subtitle {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    margin-bottom: 32px;
+}
+
+.input-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.875rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-subtle);
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px 14px 48px; /* Adjusted padding for icon */
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    background-color: var(--input-bg);
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input::placeholder {
+    color: var(--text-color-subtle);
+}
+
+.input-group input:focus {
+    border-color: var(--input-focus-border);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 16px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-color-dark);
+}
+.btn-login:active {
+    transform: translateY(1px);
+}
+
+.error-message {
+    color: var(--accent-color);
+    margin-top: 16px;
+    font-size: 0.875rem;
+    min-height: 1.2em;
+}
+
+.login-footer {
+    margin-top: 32px;
+    font-size: 0.875rem;
+    color: var(--text-color-subtle);
+}
+
+/* Dashboard Styles */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--background-color-page);
+}
+
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow-light);
+}
+
+.sidebar-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    padding-left: 8px;
+}
+
+.sidebar-profile {
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-avatar, .profile-avatar-large {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 auto 12px;
+}
+.profile-avatar-large {
+     width: 80px;
+    height: 80px;
+    font-size: 2.25rem;
+}
+
+
+.sidebar-profile h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 4px 0;
+}
+
+.sidebar-profile p {
+    font-size: 0.875rem;
+    color: var(--text-color-light);
+    margin: 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.nav-icon {
+    width: 18px; /* Ensure icons align well */
+    text-align: center;
+}
+
+.sidebar-nav li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color-dark);
+}
+.sidebar-nav li a.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+    font-weight: 600;
+}
+
+.btn-logout {
+    background-color: var(--logout-button-bg);
+    color: var(--logout-button-text);
+    padding: 14px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: auto; 
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-logout:hover {
+    background-color: var(--logout-button-hover-bg);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 32px 40px;
+    overflow-y: auto;
+}
+
+.main-header {
+    margin-bottom: 32px;
+}
+
+.main-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin:0 0 4px 0;
+}
+.main-header p {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    margin: 0;
+}
+
+
+.content-section {
+    display: none;
+    background-color: var(--card-background);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 24px;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.personal-info-card {
+    /* Specific styles for personal info card if different from generic content-section */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-info-main h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 4px 0;
+}
+.profile-info-main p {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    margin: 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    background-color: var(--background-color-page);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-color-light);
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+thead th {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+}
+
+tbody tr:hover {
+    background-color: var(--background-color-page); 
+}
+
+tbody td {
+    color: var(--text-color);
+}
+.coming-soon-text {
+    font-size: 1.25rem;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 40px;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) { /* Tablet and below */
+    .sidebar {
+        width: 250px;
+    }
+    .main-content {
+        padding: 24px 32px;
+    }
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 768px) { /* Mobile */
+    .dashboard-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding-bottom: 16px; 
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .sidebar-profile {
+        display: none; /* Hide profile in sidebar on mobile, shown in main content */
+    }
+    .sidebar-nav ul {
+        display: flex;
+        justify-content: space-around;
+        overflow-x: auto; 
+    }
+    .sidebar-nav li a {
+        padding: 10px;
+        font-size: 0.85rem;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+    .nav-icon {
+        font-size: 1.25rem;
+    }
+    .btn-logout {
+        width: fit-content;
+        align-self: center;
+        margin-top: 16px;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .main-header h1 {
+        font-size: 1.5rem;
+    }
+    .main-header p {
+        font-size: 0.9rem;
+    }
+    .content-section {
+        padding: 24px;
+    }
+     .login-box {
+        padding: 32px;
+        margin: 16px;
+    }
+    .login-title {
+        font-size: 2rem;
+    }
+    .input-group input, .btn-login {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+  
