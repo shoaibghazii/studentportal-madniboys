@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Muneeb Khalid": "munibkhalid151@gmail.com",
         "Hafiz Muhammad Saim": "hafizsaim@gmail.com",
         "Alisher": "alisher@gmail.com",
-        "Umar Mukhtar": "umar@gmail.com",
+        "Umar Mukhtar": "umarmukhtar363@gmail.com",
         "Shahzaib Sohail": "ranashahzaibsohail1@gmail.com",
         "Usman Shahid": "usman@gmail.com"
     };
