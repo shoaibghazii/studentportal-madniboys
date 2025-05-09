@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Logged In User:", loggedInUser); // Debug
 
     const studentEmails = {
-        "Shoaib Ghazi": "itsshoaibghazi@gmail.com",
+        "Shoaib Ghazi": "alisherghazi@gmail.com",
         "Ahsan Mureed": "ach162753@gmail.com",
         "Muneeb Khalid": "munibkhalid151@gmail.com",
         "Hafiz Muhammad Saim": "hafizsaim@gmail.com",
